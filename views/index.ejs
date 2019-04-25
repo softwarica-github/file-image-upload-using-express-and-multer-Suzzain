@@ -2,45 +2,39 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 	<title>Image Upload</title>
-
-
 </head>
 <body>
 
-<%= typeof msg != 'undefined' ? msg : '' %>
+<div class="container">
+	<h1>Upload Image</h1>
+	<%= typeof msg !='undefined' ? msg : '' %>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input name="image" type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
 
-<form class="form-horizontal" action="/upload" method="POST" enctype="multipart/form-data">
-<fieldset>
+<button type="submit" class="btn">Submit</button>
 
-<!-- Form Name -->
-<legend>Uploading Images</legend>
+  </form>
 
-<!-- File Button --> 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="image">Choose an image</label>
-  <div class="col-md-4">
-    <input id="image" name="image" class="input-file" type="file">
-  </div>
+  <br>
+
+  <img src="<%= typeof file !='undefined' ? file : '' %>" class="responsive-img">
+
 </div>
-</br></br>
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit"></label>
-  <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
 
 <script
   src="https://code.jquery.com/jquery-3.4.0.min.js"
   integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
   crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
