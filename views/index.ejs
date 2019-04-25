@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<title>Image Upload</title>
+
+
+</head>
+<body>
+
+<%= typeof msg != 'undefined' ? msg : '' %>
+
+<form class="form-horizontal" action="/upload" method="POST" enctype="multipart/form-data">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Uploading Images</legend>
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="image">Choose an image</label>
+  <div class="col-md-4">
+    <input id="image" name="image" class="input-file" type="file">
+  </div>
+</div>
+</br></br>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
